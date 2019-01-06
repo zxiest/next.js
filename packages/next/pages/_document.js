@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import htmlescape from 'htmlescape'
+import serialize from 'serialize-javascript'
 import flush from 'styled-jsx/server'
 
 const Fragment = React.Fragment || function Fragment ({ children }) {
@@ -194,7 +194,7 @@ export class NextScript extends Component {
 
   static getInlineScriptSource (documentProps) {
     const { __NEXT_DATA__ } = documentProps
-    return htmlescape(__NEXT_DATA__)
+    return serialize(__NEXT_DATA__, )
   }
 
   render () {
